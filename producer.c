@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <time.h>
 
-
+#define BUFFER_SIZE 2
 
 #define errExit(msg)    do { perror(msg); exit(EXIT_FAILURE); \
                                    } while (0)
@@ -18,7 +18,7 @@ memory object */
 struct shmbuf {
 sem_t  sem1;           
 sem_t  sem2;            
-int buf[2];   /* Data being transferred */
+int buf[BUFFER_SIZE];   /* Data being transferred */
 };
 
 
